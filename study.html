@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>搜索</title>
+	<link rel="stylesheet" type="text/css" href="./css/education.css" />
+	<script src="./lib/js/flexible.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./lib/js/prototype.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header id="header_det" class="mui-bar mui-bar-nav main-bg">
+	<h1 class="mui-title det-pull-style">在线学习</h1>
+	<a class="mui-icon mui-icon-undo mui-pull-left det-pull-style" href="javascript:window.history.back();"></a>
+	<a class="mui-icon mui-icon-search mui-pull-right det-pull-style"></a>
+</header>
+<section class="mui-content">
+	<div id="slider" class="mui-slider" style="height: 4rem;">
+		<div class="mui-slider-group mui-slider-loop">
+			<!--支持循环，需要重复图片节点-->
+			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/4.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="#"><img src="./images/1.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="#"><img src="./images/2.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="#"><img src="./images/3.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="#"><img src="./images/4.jpg" /></a></div>
+			<!--支持循环，需要重复图片节点-->
+			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/1.jpg" /></a></div>
+		</div>
+		<div class="mui-slider-indicator mui-text-center">
+			<div class="mui-indicator mui-active"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+		</div>
+	</div>
+	<div class="hot_box">		
+		<div class="tit_hot">学习视频</div>
+		<img class="img_b" src="./images/border_b.png" alt="未加载" />
+	</div>
+	<ul class="mui-table-view mui-grid-view mui_be">
+        <li class="mui-table-view-cell mui-media mui-col-xs-12">
+            <a class="video_sty" href="#">
+                <video name="media">
+                	<source src="http://220.170.49.115/2/p/r/p/w/prpwhvpdrortifpxslktpnplfzvxxs/hc.yinyuetai.com/2FA7015ED5F0CDBF0181D202ABFE9F08.mp4?sc=2adf823fb54fafbc&amp;br=777&amp;vid=3056301&amp;aid=4967&amp;area=US&amp;vst=0" type="video/mp4">                	
+                </video>
+                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media mui-col-xs-12">
+            <a class="video_sty" href="#">
+                <video name="media">
+                	<source src="http://220.170.49.115/2/p/r/p/w/prpwhvpdrortifpxslktpnplfzvxxs/hc.yinyuetai.com/2FA7015ED5F0CDBF0181D202ABFE9F08.mp4?sc=2adf823fb54fafbc&amp;br=777&amp;vid=3056301&amp;aid=4967&amp;area=US&amp;vst=0" type="video/mp4">                	
+                </video>
+                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+<script type="text/javascript" src="./lib/mui/js/mui.js"></script>
+<script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+<script>
+var videos = $('video[name="media"]');
+var gallery = mui('#slider');
+gallery.slider({
+  interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+});
+$(".time").text(new Date().format("yyyy-MM-dd h:m:s"));
+
+
+videos.each(function(i,j){
+	$(j).click(function(){
+		videos.each(function(y,z){
+			if(z != j){
+				$(z).removeAttr("controls");		
+				z.pause();				
+			}
+		});
+		$(j).attr("controls","controls");
+		j.play();
+	});
+	j.onplay = function(){
+		videos.each(function(y,z){
+			if(z != j){
+				$(z).removeAttr("controls");
+				z.pause();
+			}
+		});
+		$(j).attr("controls","controls");
+	}
+});
+
+</script>
+</script>
+</body>
+</html>

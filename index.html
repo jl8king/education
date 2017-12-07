@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>教育</title>
+	<link rel="stylesheet" type="text/css" href="./css/education.css" />
+	<script src="./lib/js/flexible.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./lib/js/prototype.js" type="text/javascript"></script>
+</head>
+<body>
+
+<header>
+	<a href="search.html" class="search ind-pull-style main-bg">
+		<!--<div class="sea_close">×</div>-->
+		<div class="mui-input-row mui-search">
+			<input style="border-radius: 0;border: 0;" type="search" class="mui-input-clear" placeholder="" data-input-clear="1" data-input-search="1">
+			<span class="mui-icon mui-icon-clear mui-hidden"></span>
+			<span class="mui-placeholder">
+				<span class="mui-icon mui-icon-search"></span>
+				<span></span>
+			</span>
+		</div>
+		<div style="font-size: .45rem;color:#FFF;">搜索</div>
+	</a>
+	<div id="slider" class="mui-slider" style="height: 4rem;">
+		<div class="mui-slider-group mui-slider-loop">
+			<!--支持循环，需要重复图片节点-->
+			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/4.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="quality.html"><img src="./images/1.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="quality.html"><img src="./images/2.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="quality.html"><img src="./images/3.jpg" /></a></div>
+			<div class="mui-slider-item"><a href="quality.html"><img src="./images/4.jpg" /></a></div>
+			<!--支持循环，需要重复图片节点-->
+			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/1.jpg" /></a></div>
+		</div>
+		
+		<div class="mui-slider-indicator mui-text-center">
+			<div class="mui-indicator mui-active"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+		</div>
+	</div>
+</header>
+<section class="mui-content">
+	<ul class="mui-table-view mui-grid-view mui_list">
+	    <li class="mui-table-view-cell mui-media mui-col-xs-3">
+	        <a href="quality.html">
+	        	<div class="nav_list" style="background-color:#ff9800;">
+	            	<img class="mui-media-object" src="./images/nav_1.png">
+	            </div>
+	            <div class="mui-media-body nav_tit">质量教育</div>
+	        </a>
+	    </li>
+	    <li class="mui-table-view-cell mui-media mui-col-xs-3">
+	        <a href="quality.html">
+	        	<div class="nav_list" style="background-color:#3f69ba;">
+	            	<img class="mui-media-object" src="./images/nav_2.png">
+	            </div>
+	            <div class="mui-media-body nav_tit ellipsis">法制教育</div>
+	        </a>
+	    </li>
+	    <li class="mui-table-view-cell mui-media mui-col-xs-3">
+	        <a href="train.html">
+	        	<div class="nav_list" style="background-color:#8bc34a;">
+	            	<img class="mui-media-object" src="./images/nav_3.png">
+	            </div>
+	            <div class="mui-media-body nav_tit">职业培训</div>
+	        </a>
+	    </li>
+	    <li class="mui-table-view-cell mui-media mui-col-xs-3">
+	        <a href="study.html">
+	        	<div class="nav_list" style="background-color:#c4614b;">
+	            	<img class="mui-media-object" src="./images/nav_4.png">
+	            </div>
+	            <div class="mui-media-body nav_tit">在线学习</div>
+	        </a>
+	    </li>
+	</ul>
+	<div class="hot_box">
+		<div class="tit_hot">热门</div>
+		<img class="img_b" src="./images/border_b.png" alt="未加载" />
+		<ul class="mui-table-view out_line">
+			<li class="mui-table-view-cell mui-media">
+				<a class="elli_none" href="details.html">
+					<img class="mui-pull-left" src="./images/search.png">
+					<div class="mui-media-body">
+						<div class="media-body-tit mui-ellipsis">几点酸酸的李开复撒</div>
+						<div class="gray mui-ellipsis-2">
+							想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖,
+							想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖
+						</div>
+						<div class="gray time">2017-12-7 12:25</div>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a class="elli_none" href="details.html">
+					<img class="mui-pull-left" src="./images/search.png" />
+					<div class="mui-media-body">
+						<div class="media-body-tit mui-ellipsis">几点酸酸的李开复撒</div>
+						<div class="gray mui-ellipsis-2">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</div>
+						<div class="gray time">2017-12-7 12:25</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<script type="text/javascript" src="./lib/mui/js/mui.js"></script>
+<script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+<script type="text/javascript">
+var gallery = mui('#slider');
+gallery.slider({
+  interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+});
+$(".time").text(new Date().format("yyyy-MM-dd h:m:s"));
+</script>
+
+</body>
+</html>
